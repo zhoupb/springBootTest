@@ -1,0 +1,4 @@
+com.md:
+      name: "嘟嘟duduMD222"
+      want: "祝大家鸡年大吉222"
+      double1: ${com.md.name}在此222${com.md.want}
