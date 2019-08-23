@@ -1,6 +1,6 @@
-package com.example.springbootdemo.common.exception;
+package com.example.dora.common.exception;
 
-import com.example.springbootdemo.common.constants.ResultCodeEnum;
+import com.example.dora.common.constants.ResultCodeEnum;
 
 /**
  * @author jzl

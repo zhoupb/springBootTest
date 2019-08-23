@@ -1,4 +1,4 @@
-package com.example.springbootdemo.controller;
+package com.example.dora.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 

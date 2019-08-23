@@ -1,9 +1,9 @@
-package com.example.springbootdemo.common.exception;
+package com.example.dora.common.exception;
 
 import com.alibaba.fastjson.support.spring.FastJsonJsonView;
-import com.example.springbootdemo.common.Result;
-import com.example.springbootdemo.common.constants.ResultCodeEnum;
-import com.example.springbootdemo.common.constants.StringPool;
+import com.example.dora.common.Result;
+import com.example.dora.common.constants.ResultCodeEnum;
+import com.example.dora.common.constants.StringPool;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authz.UnauthenticatedException;
 import org.apache.shiro.authz.UnauthorizedException;
@@ -15,6 +15,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 使用Spring中的HandlerExceptionResolver自定义异常拦截器，实现全局异常处理
+ *
+ * 方法二：@ExceptionHandler注解实现异常处理
+ * 方法三：使用Spring-MVC提供的SimpleMappingExceptionResolver；
+ */
 @Slf4j
 public class MyExceptionHandler implements HandlerExceptionResolver {
 
@@ -24,10 +30,10 @@ public class MyExceptionHandler implements HandlerExceptionResolver {
         ModelAndView mv = new ModelAndView();
         FastJsonJsonView view = new FastJsonJsonView();
         Result<Void> result;
-        if (ex instanceof UnauthenticatedException) {
+        if (ex instanceof UnauthenticatedException) {   // 未经认证异常
             log.error(StringPool.EMPTY, ex);
             result = Result.with(ResultCodeEnum.NOT_LOGIN);
-        } else if (ex instanceof UnauthorizedException) {
+        } else if (ex instanceof UnauthorizedException) {   // 未经授权异常
             log.error(StringPool.EMPTY, ex);
             result = Result.with(ResultCodeEnum.NOT_AUTH);
         } else if (ex instanceof BizException) {

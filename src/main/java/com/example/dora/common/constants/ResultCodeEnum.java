@@ -1,6 +1,6 @@
-package com.example.springbootdemo.common.constants;
+package com.example.dora.common.constants;
 
-import com.example.springbootdemo.common.exception.BizException;
+import com.example.dora.common.exception.BizException;
 
 import java.util.Arrays;
 import java.util.Collections;

@@ -1,4 +1,4 @@
-package com.example.springbootdemo;
+package com.example.dora;
 
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;

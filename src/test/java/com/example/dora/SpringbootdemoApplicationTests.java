@@ -1,4 +1,4 @@
-package com.example.springbootdemo;
+package com.example.dora;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

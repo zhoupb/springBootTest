@@ -1,5 +1,5 @@
 
-package com.example.springbootdemo.utils.jpush;
+package com.example.dora.utils.jpush;
 
 import cn.jpush.api.push.model.Platform;
 import cn.jpush.api.push.model.PushPayload;

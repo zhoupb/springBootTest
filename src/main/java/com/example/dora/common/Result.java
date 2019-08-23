@@ -1,7 +1,7 @@
-package com.example.springbootdemo.common;
+package com.example.dora.common;
 
-import com.example.springbootdemo.common.constants.ResultCodeEnum;
-import com.example.springbootdemo.common.exception.BizException;
+import com.example.dora.common.constants.ResultCodeEnum;
+import com.example.dora.common.exception.BizException;
 import lombok.Data;
 
 @Data
@@ -22,10 +22,6 @@ public class Result<T> {
      */
     private T model;
 
-    /**
-     * 总记录数 分页用
-     */
-//    private int total;
     public Result() {
     }
 

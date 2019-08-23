@@ -1,4 +1,4 @@
-package com.example.springbootdemo.common.constants;
+package com.example.dora.common.constants;
 
 /**
  * @author jzl

@@ -1,6 +1,6 @@
-package com.example.springbootdemo.utils;
+package com.example.dora.utils;
 
-import com.example.springbootdemo.common.constants.ResultCodeEnum;
+import com.example.dora.common.constants.ResultCodeEnum;
 import org.springframework.util.StringUtils;
 
 import java.util.Objects;
