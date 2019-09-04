@@ -30,7 +30,7 @@ public class MyExceptionHandler implements HandlerExceptionResolver {
         ModelAndView mv = new ModelAndView();
         FastJsonJsonView view = new FastJsonJsonView();
         Result<Void> result;
-        if (ex instanceof UnauthenticatedException) {   // 未经认证异常
+        if (ex instanceof UnauthenticatedException) {   // 未经认证异常  cookie/sessionId
             log.error(StringPool.EMPTY, ex);
             result = Result.with(ResultCodeEnum.NOT_LOGIN);
         } else if (ex instanceof UnauthorizedException) {   // 未经授权异常
