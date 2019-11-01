@@ -4,13 +4,13 @@ import lombok.Data;
 
 /**
  * @author: zhoupb
- * @Description: User
+ * @Description: Goods
  * @since: version 1.0
  */
 @Data
-public class User {
+public class Goods {
 
-    private String id;
+    private Integer id;
 
-    private Integer age;
+    private String goodsName;
 }
