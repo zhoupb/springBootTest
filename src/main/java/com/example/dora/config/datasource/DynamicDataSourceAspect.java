@@ -1,4 +1,4 @@
-package com.example.dora.config;
+package com.example.dora.config.datasource;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
@@ -23,7 +23,7 @@ import java.lang.reflect.Method;
 @Slf4j
 public class DynamicDataSourceAspect {
 
-    @Pointcut("@annotation(com.example.dora.config.DataSource)")
+    @Pointcut("@annotation(com.example.dora.config.datasource.DataSource)")
     public void pointCut() {}
 
 

@@ -1,4 +1,4 @@
-package com.example.dora.config;
+package com.example.dora.config.datasource;
 
 /**
  * @author: zhoupb

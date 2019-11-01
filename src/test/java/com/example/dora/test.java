@@ -1,12 +1,7 @@
 package com.example.dora;
 
-import com.example.dora.domain.User;
-import com.example.dora.service.GoodsService;
-import com.example.dora.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -20,29 +15,8 @@ import java.util.List;
  * @since: version 1.0
  */
 @RunWith(SpringRunner.class)
-@AutoConfigureMockMvc
 @SpringBootTest
 public class test {
-
-    @Autowired
-    UserService userService;
-
-    @Autowired
-    GoodsService goodsService;
-
-    @Test
-    public void test1() {
-
-        User user = new User();
-        user.setId("1");
-        user.setAge(4);
-        userService.add(user);
-
-//        Goods goods = new Goods();
-//        goods.setGoodsName("heihie");
-//        goodsService.add(goods);
-
-    }
 
     @Test
     public void test2() {

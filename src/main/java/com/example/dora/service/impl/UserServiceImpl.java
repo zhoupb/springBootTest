@@ -1,12 +1,11 @@
 package com.example.dora.service.impl;
 
-import com.example.dora.config.DataSource;
+import com.example.dora.config.datasource.DataSource;
 import com.example.dora.domain.User;
 import com.example.dora.mapper.UserMapper;
 import com.example.dora.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author: zhoupb
@@ -20,7 +19,6 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    //@Transactional
     @DataSource("zpb")
     public void add(User user) {
         userMapper.insert(user);

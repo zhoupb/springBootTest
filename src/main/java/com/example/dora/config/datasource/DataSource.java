@@ -1,4 +1,4 @@
-package com.example.dora.config;
+package com.example.dora.config.datasource;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
