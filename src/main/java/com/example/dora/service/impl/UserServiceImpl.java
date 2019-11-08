@@ -19,7 +19,7 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    @DataSource("zpb")
+    //@DataSource("zpb")
     public void add(User user) {
         userMapper.insert(user);
     }
