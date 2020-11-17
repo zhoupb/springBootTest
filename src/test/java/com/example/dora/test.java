@@ -17,15 +17,8 @@ import java.util.List;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class test {
-
     @Test
     public void test2() {
-
-        String[] a = {"1", "2", "3"};
-        List<String> list = Arrays.asList(a);
-        List<String> list1 = new ArrayList<>(list);
-        list1.add("5");
-        System.out.println(list);
 
     }
 

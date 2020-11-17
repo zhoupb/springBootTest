@@ -9,7 +9,7 @@ public enum  DataSourceName {
 
     ZHOUPB("zhoupb"),
 
-    JIANG("zpb");
+    SYJ("db_dora_syj");
 
     private String value;
 

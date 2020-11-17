@@ -19,7 +19,7 @@ import java.io.File;
  * Description：发送邮件工具类
  * Created on 2019-11-06
  *
- * @author 李军
+ * @author zhoupeibao
  */
 @Component
 public class SendEmailUtil {

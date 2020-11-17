@@ -2,6 +2,8 @@ package com.example.dora.controller;
 
 
 import com.example.dora.domain.User;
+import com.example.dora.mapper.UserMapper;
+import com.example.dora.mapper.syjmapper.SuUserMapper;
 import com.example.dora.service.UserService;
 import com.example.dora.utils.RedisUtil;
 import com.example.dora.utils.SendEmailUtil;
@@ -31,9 +33,7 @@ public class UserController {
     public void add(User user) {
 
         try {
-            userService.add(user);
         } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 

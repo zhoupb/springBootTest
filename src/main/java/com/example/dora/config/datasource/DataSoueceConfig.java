@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.config.GlobalConfig;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.type.JdbcType;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -34,7 +35,7 @@ public class DataSoueceConfig {
     private Class<? extends DataSource> meType;
 
     @Value("${spring.datasource.secondary.type}")
-    private Class<? extends DataSource> jiangType;
+    private Class<? extends DataSource> syjType;
 
     @Bean(name = "zhoupb")
     @ConfigurationProperties(prefix = "spring.datasource.primary")
@@ -44,11 +45,13 @@ public class DataSoueceConfig {
         log.info("配置me数据源end");
         return build;
     }
-    @Bean(name = "zpb")
+    @Bean(name = "syj")
     @ConfigurationProperties(prefix="spring.datasource.secondary")
     public DataSource secondaryDataSource() {
-        log.info("配置jiang数据源");
-        return DataSourceBuilder.create().type(jiangType).build();
+        log.info("配置syj数据源start");
+        DataSource build = DataSourceBuilder.create().type(syjType).build();
+        log.info("配置syj数据源end");
+        return build;
     }
 
     /**
@@ -57,11 +60,11 @@ public class DataSoueceConfig {
      */
     @Bean
     @Primary
-    public DataSource multipleDataSource(@Qualifier("zhoupb") DataSource zhoupb, @Qualifier("zpb") DataSource zpb) {
+    public DataSource multipleDataSource(@Qualifier("zhoupb") DataSource zhoupb, @Qualifier("syj") DataSource syj) {
         DynamicDataSource dynamicDataSource = new DynamicDataSource();
         Map< Object, Object > targetDataSources = new HashMap<>(4);
         targetDataSources.put(DataSourceName.ZHOUPB.getValue(), zhoupb);
-        targetDataSources.put(DataSourceName.JIANG.getValue(), zpb);
+        targetDataSources.put(DataSourceName.SYJ.getValue(), syj);
         //添加数据源
         dynamicDataSource.setTargetDataSources(targetDataSources);
         //设置默认数据源
@@ -82,9 +85,9 @@ public class DataSoueceConfig {
         sqlSessionFactory.setConfiguration(configuration);
 //        ClassPathResource resource = new ClassPathResource("/mapper/MallProductDataMapper.xml");
 //        sqlSessionFactory.setMapperLocations(new Resource[]{resource});
-//        sqlSessionFactory.setPlugins(new Interceptor[]{
-//                paginationInterceptor()
-//        });
+        sqlSessionFactory.setPlugins(new Interceptor[]{
+                paginationInterceptor()
+        });
         sqlSessionFactory.setGlobalConfig(globalConfig());
         return sqlSessionFactory.getObject();
     }
