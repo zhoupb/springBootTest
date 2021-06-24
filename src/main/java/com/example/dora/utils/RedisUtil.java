@@ -388,6 +388,23 @@ public class RedisUtil {
     }
 
     /**
+     * 更新缓存
+     *
+     * @param key
+     * @param value
+     * @return
+     */
+    public boolean update(String key, Object value) {
+        try {
+            redisTemplate.opsForValue().set(key, value, 0);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    /**
      * 移除值为value的
      *
      * @param key    键

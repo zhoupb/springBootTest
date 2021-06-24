@@ -53,7 +53,7 @@ public class Result<T> {
 
     public static Result withException(BizException e) {
         Result r = new Result();
-        r.setCode(e.code());
+//        r.setCode(e.code());
         r.setMsg(e.getMessage());
         return r;
     }
